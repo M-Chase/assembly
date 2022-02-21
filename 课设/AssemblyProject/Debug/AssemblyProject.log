@@ -1,0 +1,4 @@
+﻿  Assembling 5.asm...
+D:\Irvine\SmallWin.inc(11): warning A4011: multiple .MODEL directives found : .MODEL ignored
+5.asm(460): warning A6004: procedure argument or local not referenced : jNum
+  AssemblyProject.vcxproj -> C:\Users\86186\Desktop\assembly\AssemblyProject\Debug\AssemblyProject.exe

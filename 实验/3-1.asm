@@ -1,0 +1,21 @@
+;编写一个 16 位的乘法，被乘数是 100H，乘数是 100H，观察 Flags 的变化，
+;00100000->10100011
+DATA SEGMENT
+
+DATA ENDS
+
+STACKS SEGMENT
+
+STACKS ENDS
+
+CODES SEGMENT
+    ASSUME CS:CODES, DS:DATA, SS:STACKS
+START:
+    mov bx,100h
+    mov ax,100h
+    mul bx
+    
+    MOV AH, 4CH
+    INT 21H
+CODES ENDS
+END START
