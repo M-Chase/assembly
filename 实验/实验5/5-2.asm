@@ -1,0 +1,22 @@
+;被加数是0FFH，加数是01H，观察 Flags的变化
+; AX的变化过程为：00FFH->0100H
+; flags变化 00100000->00100110
+DATA SEGMENT
+    
+DATA ENDS
+
+STACKS SEGMENT
+    
+STACKS ENDS
+
+CODES SEGMENT
+    ASSUME CS:CODES, DS:DATA, SS:STACKS
+START:
+    mov ax,0FFh
+    mov bx,01h
+    add ax,bx
+    
+    MOV AH, 4CH
+    INT 21H
+CODES ENDS
+END START

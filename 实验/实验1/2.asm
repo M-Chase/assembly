@@ -1,0 +1,24 @@
+;编写一个累计减法，被减数是10011000B，减数是 01000000B，连续减5次，观察FLAGS的变化
+; AX的变化过程为：0098H->0058H->0018H->FFD8H->FF98H->FF58H
+;flag变化过程 00100000->00100000->00100010->00110011->00110000->00110000
+DATA SEGMENT
+    
+DATA ENDS
+
+STACKS SEGMENT
+    
+STACKS ENDS
+
+CODES SEGMENT
+    ASSUME CS:CODES, DS:DATA, SS:STACKS
+START:
+    mov ax,0098h
+    mov bx,0040h
+    mov cx,5
+loo:  sub ax,bx
+    loop loo
+    
+    MOV AH, 4CH
+    INT 21H
+CODES ENDS
+END START
